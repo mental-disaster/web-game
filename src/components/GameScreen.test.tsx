@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import GameScreen from '@/components/GameScreen';
-import { Choice } from '@/types/Choice';
+import { Choice } from '@/types/choice';
 
 const initialText = '게임을 시작합니다.';
 const restartText = '다시 시작하기';

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Choice } from '@/types/Choice';
+import { Choice } from '@/types/choice';
 
 interface GameScreenProps {
   initialText?: string;
