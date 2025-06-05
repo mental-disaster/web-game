@@ -1,7 +1,7 @@
 import { Choice } from "@/types/Choice";
 
 export const initialChoices: Choice[] = [
-    {
+    {   
       text: '동굴 안으로 들어간다',
       nextText: '동굴 안은 생각보다 넓습니다. 앞쪽에서 물이 떨어지는 소리가 들립니다.',
       nextChoices: [
