@@ -3,14 +3,13 @@ export interface Choice {
   nextSceneId: string;
 }
 
-
 export interface Scene {
-  id: string;  
+  id: string;
   text: string;
-  choices: Choice[]
+  choices: Choice[];
 }
 
-export interface Scenario{
+export interface Scenario {
   id: string;
   name: string;
   scenes: Scene[];

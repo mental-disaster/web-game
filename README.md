@@ -22,7 +22,7 @@ web-game/
 │   ├── lib/               # 유틸리티 함수
 │   ├── types/             # TypeScript 타입 정의
 │   └── data/              # 게임 데이터 및 스토리
-├── public/                # 정적 파일
+└── public/                # 정적 파일
 ```
 
 ## 개발 환경 설정
