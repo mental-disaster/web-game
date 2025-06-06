@@ -2,28 +2,36 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Choice } from '@/types/choice';
+import { Scenario, Choice, Scene } from '@/types/scenario';
 
 interface GameScreenProps {
-  initialText?: string;
-  scenario: Choice[];
+  scenario: Scenario;
 }
 
-export default function GameScreen({ initialText = '게임 시작...', scenario }: GameScreenProps) {
-  const [gameText, setGameText] = useState<string>(initialText);
-  const [choices, setChoices] = useState<Choice[]>(scenario);
+export default function GameScreen({scenario }: GameScreenProps) {
+  const [currentScene, setCurrentScene] = useState<Scene>(scenario.scenes[0])
 
   const handleChoice = (choice: Choice) => {
-    setGameText(choice.nextText);
-    if (choice.nextChoices.length > 0) {
-      setChoices(choice.nextChoices);
-    } else {
-      setChoices([{
-        text: '다시 시작하기',
-        nextText: initialText,
-        nextChoices: scenario
-      }]);
+    debugger;
+    let isEnd = true 
+    for(const scene of scenario.scenes){
+      if (scene.id === choice.nextSceneId){
+        setCurrentScene(scene)
+        isEnd = false;
+        
+      }
     }
+    if(isEnd){setCurrentScene({
+      id: 'end',
+      text: '게임종료',
+      choices: [
+        {
+          text: '다시하기',
+          nextSceneId: "intro",
+        }
+      ]
+    })}
+    console.log(currentScene)
   };
 
   return (
@@ -32,12 +40,12 @@ export default function GameScreen({ initialText = '게임 시작...', scenario 
         <div className="bg-gray-800 rounded-lg p-6">
           <div className="h-[60vh] overflow-y-auto mb-4 p-4 bg-gray-700 rounded">
             <pre className="whitespace-pre-wrap font-mono">
-              {gameText}
+              {currentScene.text}
             </pre>
           </div>
           
           <div className="flex flex-col gap-2">
-            {choices.map((choice, index) => (
+            {currentScene.choices.map((choice, index) => (
               <Button
                 key={index}
                 onClick={() => handleChoice(choice)}
