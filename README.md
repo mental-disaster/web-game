@@ -1,12 +1,15 @@
-# 텍스트 어드벤처 게임
+# 웹 텍스트 어드벤처 게임
 
 Next.js로 구현된 인터랙티브 텍스트 어드벤처 게임입니다.
 
 ## 기술 스택
 
-- **프레임워크**: [Next.js](https://nextjs.org) (App Router)
-- **언어**: TypeScript
-- **스타일링**: Tailwind CSS, Shadcn/UI
+- **런타임**: Node.js v22.11.0
+- **프레임워크**: [Next.js](https://nextjs.org) v14.1.0 (App Router)
+- **언어**: TypeScript v5.3.3
+- **스타일링**: 
+  - Tailwind CSS v3.4.1
+  - Shadcn/UI
 
 ## 프로젝트 구조
 
